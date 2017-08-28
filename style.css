@@ -1,0 +1,41 @@
+body{
+    font-family: 'open sans';
+    font-size: 11px;
+}
+
+#wrapper{
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    border:4px dashed #C0C0C0;
+    height: 600px;
+    padding:20px;
+    margin-top:25px;
+}
+
+#list{
+    text-align: left;
+    font-size: 18px;
+    line-height: 170%;
+    padding-left: 10px;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Roboto';
+}
+
+h1 a{
+    text-decoration: none;
+    color: black;
+}
+
+input, select, button{
+    font-size: 11px;
+    font-family: 'open sans';
+}

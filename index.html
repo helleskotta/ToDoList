@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TO DO LIST</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body ng-app="demoapp">
+    <div id="wrapper">
+    <!-- Rubrik -->
+      <h1> <a href="file:///C:/Project/%C3%96vningsuppgifter/Angular/Checkbox/_seed/index.html">TO DO LIST</a></h1>
+    
+    <!-- Task list -->
+    <div ng-controller="choreController">
+
+      <!-- Sortera -->
+      Sort by:
+      <select ng-model="order">
+        <option ng-repeat="s in sorted" ng-value="s">{{s.name}}</option>
+      </select>   
+
+      <input placeholder="Filter tasks..." ng-model="search">
+      <br /><br />
+      
+      <!-- Add task -->
+      <input size="33" placeholder="Add new task..." ng-model="newChoreDesc">
+      <button ng-click="addChore()" ng-disabled="!newChoreDesc">Add</button>
+
+      <!-- Listan utskriven -->
+      <br /><br />
+      <div id="list">
+        <div ng-repeat="chore in chores | orderBy: 'desc' : order.reverse | filter: search " ng-class="{checked:chore.checked}">
+          <input type="checkbox" ng-model="chore.checked">
+          {{chore.desc}}
+        </div>      
+      </div>
+      <!-- Skriver ut vilka proppar som funkar -->
+        <!-- <pre>{{ order | json }}</pre> -->
+    </div>
+
+    <!-- Script tags -->
+    <script src="angular.min.js"></script>
+    <script src="code.js"></script>
+  </div>
+  </body>
+</html>
